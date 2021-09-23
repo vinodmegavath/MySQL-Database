@@ -1,0 +1,75 @@
+# To Create Database in Pythonimport mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="Vinod@123")
+
+mycursor = mydb.cursor()
+mycursor.execute("CREATE DATABASE Movie.movie_details")
+
+
+
+
+#To Create Tableimport mysql.connector
+
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="Vinod@123",
+  database="Movie.movie_details"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE movie_details (Year of Release INT, Actor Name VARCHAR(45), Actress Name VARCHAR(45), Director Name VARCHAR(45)")
+
+ 
+ 
+ #To Insert Data in Table
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="Vinod@123",
+  database="Movie.movie_details"
+)
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO movie_details (Year of Release, Movie Name, Actor Name, Actress Name, Director Name) VALUES (%d, %s, %s, %s, %s)"
+val1 = ("2015", "Bahubali", “Prabhas”, “Anushka”, “Rajamouli”)
+val2 = ("2017", "Khaidi No 150", “Chiranjeevi”, “Kajal Agarwal”, “V. Vinayak”)
+val3 = ("2021", "Krack", “Ravi Teja”, “Shruthi Hasan”, “Gopichand Malineni”)
+val4 = ("2021", "Red", “Ram Pothineni”, “Nivetha”, “Kishore Tirumala”)
+val5 = ("2015", "Temper", “Jr. NTR”, “Kajal Agarwal”, “Puri Jaganath”)
+mycursor.execute(sql, val1, val2, val3, val4, val5)
+
+mydb.commit()
+
+print(mycursor.rowcount, "record inserted.")
+
+
+
+#To Retrieve the Dataimport mysql.connector
+
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="Vinod@123",
+  database="Movie.movie_details"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
