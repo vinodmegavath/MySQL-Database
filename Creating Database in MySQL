@@ -1,0 +1,28 @@
+1.	Creating Database
+
+CREATE SCHEMA `movie` ;
+
+
+2.	Creating Table
+
+CREATE TABLE `movie`.`movie_details` (
+  `Year of Release` INT NOT NULL,
+  `Movie Name` VARCHAR(45) NOT NULL,
+  `Actor Name` VARCHAR(45) NOT NULL,
+  `Actress Name` VARCHAR(45) NOT NULL,
+  `Director Name` VARCHAR(45) NOT NULL,
+ PRIMARY KEY (`Movie Name`));
+
+
+3.	Inserting Data of Movie
+
+INSERT INTO `movie`.`movie_details` (`Year of Release`, `Movie Name`, `Actor Name`, `Actress Name`, `Director Name`) VALUES ('2015', 'Bahubali', 'Prabhas', 'Anushka', 'Rajamouli');
+INSERT INTO `movie`.`movie_details` (`Year of Release`, `Movie Name`, `Actor Name`, `Actress Name`, `Director Name`) VALUES ('2017', 'Khaidi No 150', 'Chiranjeevi', 'Kajal Agarwal', 'V. Vinayak');
+INSERT INTO `movie`.`movie_details` (`Year of Release`, `Movie Name`, `Actor Name`, `Actress Name`, `Director Name`) VALUES ('2021', 'Krack', 'Ravi Teja', 'Shruthi Hasan', 'Gopichand Malineni');
+INSERT INTO `movie`.`movie_details` (`Year of Release`, `Movie Name`, `Actor Name`, `Actress Name`, `Director Name`) VALUES ('2021', 'Red', 'Ram Pothineni', 'Nivetha', 'Kishore Tirumala');
+INSERT INTO `movie`.`movie_details` (`Year of Release`, `Movie Name`, `Actor Name`, `Actress Name`, `Director Name`) VALUES ('2017', 'Temper', 'Jr. NTR', 'Kajal Agarwal', 'Puri Jaganath');
+
+
+4.	Retrieving Data
+
+SELECT * FROM movie.movie_details;
